@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言 写在前面：在闲暇之余记录自己的攻城狮之路，希望可以帮助自己学习，也可以帮助其他人，好了—不多说，以下就是我在搭建博客中的过程,自己在网上找的使用过程，个人认为比较通俗易懂  Hexo安装和配置系统环境  首先需要安装一下程序 node.js 安装过程可以百度参考 git  安装建议勾选Git Bash Here，方便以后的操作。其他一路Next即可。 notepad++(可选) 文本编辑，用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo和git搭建个人网站">
+<meta property="og:url" content="http://yoursite.com/2018/04/25/Hexo-GitHub/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="前言 写在前面：在闲暇之余记录自己的攻城狮之路，希望可以帮助自己学习，也可以帮助其他人，好了—不多说，以下就是我在搭建博客中的过程,自己在网上找的使用过程，个人认为比较通俗易懂  Hexo安装和配置系统环境  首先需要安装一下程序 node.js 安装过程可以百度参考 git  安装建议勾选Git Bash Here，方便以后的操作。其他一路Next即可。 notepad++(可选) 文本编辑，用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-23T08:50:16.281Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo和git搭建个人网站">
+<meta name="twitter:description" content="前言 写在前面：在闲暇之余记录自己的攻城狮之路，希望可以帮助自己学习，也可以帮助其他人，好了—不多说，以下就是我在搭建博客中的过程,自己在网上找的使用过程，个人认为比较通俗易懂  Hexo安装和配置系统环境  首先需要安装一下程序 node.js 安装过程可以百度参考 git  安装建议勾选Git Bash Here，方便以后的操作。其他一路Next即可。 notepad++(可选) 文本编辑，用">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/25/Hexo-GitHub/"/>
+
+
+
+
+
+  <title>hexo和git搭建个人网站 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/Hexo-GitHub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SY">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hexo和git搭建个人网站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T10:21:07+08:00">
+                2018-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>写在前面：<br>在闲暇之余记录自己的攻城狮之路，希望可以帮助自己学习，也可以帮助其他人，好了—不多说，以下就是我在搭建博客中的过程,自己在网上找的使用过程，个人认为比较通俗易懂</p>
+</blockquote>
+<h3 id="Hexo安装和配置"><a href="#Hexo安装和配置" class="headerlink" title="Hexo安装和配置"></a>Hexo安装和配置</h3><p><strong>系统环境</strong></p>
+<ul>
+<li>首先需要安装一下程序<ul>
+<li>node.js 安装过程可以百度参考</li>
+<li>git  安装建议勾选<code>Git Bash Here</code>，方便以后的操作。其他一路Next即可。</li>
+<li>notepad++(可选) 文本编辑，用于修改配置以及写文章</li>
+</ul>
+</li>
+</ul>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>1.新建文件夹，例如<code>blog</code></p>
+<p>2.进入<code>blog</code>文件夹，右键点击<code>Git Bash Here</code>。</p>
+<p>3.安装Hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<p>4.初始化<code>blog</code>文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<p>5.安装依赖和插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p><strong>注意:</strong>执行命令需要Git当前处于<code>blog</code>文件夹根目录下。</p>
+<ul>
+<li><p>执行命令需要Git当前处于blog文件夹根目录下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>server 启动服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>deploy 部署网站。部署网站前，需要预先生成静态文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>clean 清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li><p>卸载Hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.0.0版本执行npm uninstall hexo-cli -g，之前版本执行npm uninstall hexo -g。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装旧版本Hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">先卸载当前版本，以2.8.3为例，执行npm install hexo@2.8.3 -g，再初始化并安装依赖和插件。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>Hexo的配置文件是位于<code>blog</code>文件夹下的<code>_config.yml</code>文件。</p>
+<p>修改配置文件请使用<code>Notepad++</code>或者<code>Sublime Text 2</code>之类的程序，不要使用Windows自带的记事本。</p>
+<p>以下为Hexo 3.0.0初始配置。只贴出常规需要修改的地方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Hexo ##站点标题</span><br><span class="line">subtitle: ##站点副标题</span><br><span class="line">description: ##站点描述</span><br><span class="line">author: John Doe ##作者</span><br><span class="line">language: ##语言包，需要主题自带才可设置。如Jcaman自带简繁英，设置简体中文填入 zh-CN</span><br><span class="line">timezone:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yoursite.com ##站点域名</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/ ##文章永久链接格式，可添加.html后缀，如 :title.html</span><br><span class="line">permalink_defaults:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">## Themes: http://hexo.io/themes/</span><br><span class="line">theme: landscape ##当前主题名称</span><br></pre></td></tr></table></figure>
+<h3 id="主题和插件"><a href="#主题和插件" class="headerlink" title="主题和插件"></a>主题和插件</h3><p>这里是<a href="http://hexo.io/themes/" target="_blank" rel="noopener">Hexo官方主题页</a>本文使用的是next主题，建议刚开始使用hexo的人群</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>在<strong>blog</strong>目录下右键点击<code>Git Bash Here</code>，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/wuchong/jacman.git themes/next</span><br></pre></td></tr></table></figure></p>
+<h4 id="启用"><a href="#启用" class="headerlink" title="启用"></a>启用</h4><p>修改blog目录下的<code>_config.yml</code>配置文件中的<code>theme</code>属性，将其设置为<code>next</code></p>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/jacman</span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<h4 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h4><p>主题配置文件是<code>blog/themes/next</code>目录下的<code>_config.yml</code>。具体参数及功能因主题不同而各异，请查看相应主题的介绍自行修改。</p>
+<h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p>插件位于<code>blog/node_modules</code>目录下，Hexo 3.0.0默认会安装以下插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo-generator-archive</span><br><span class="line">hexo-generator-category</span><br><span class="line">hexo-generator-index</span><br><span class="line">hexo-generator-tag</span><br><span class="line">hexo-renderer-ejs</span><br><span class="line">hexo-renderer-marked</span><br><span class="line">hexo-renderer-stylus</span><br><span class="line">hexo-server</span><br></pre></td></tr></table></figure></p>
+<h4 id="分页插件"><a href="#分页插件" class="headerlink" title="分页插件"></a>分页插件</h4><p>在<code>blog</code>目录下的<code>_config.yml</code>配置文件末尾添加以下内容以设置分页参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Plugins</span><br><span class="line">index_generator:</span><br><span class="line">  per_page: 10 ##首页默认10篇文章标题，如果值为0不分页</span><br><span class="line"></span><br><span class="line">archive_generator:</span><br><span class="line">  per_page: 10 ##归档页面默认10篇文章标题，如果值为0不分页</span><br><span class="line">  yearly: true ##生成年视图</span><br><span class="line">  monthly: true ##生成月视图</span><br><span class="line"></span><br><span class="line">tag_generator:</span><br><span class="line">  per_page: 10 ##标签页面默认10篇文章，如果值为0不分页</span><br><span class="line"></span><br><span class="line">category_generator: </span><br><span class="line">  per_page: 10 ##分类页面默认10篇文章，如果值为0不分页</span><br></pre></td></tr></table></figure></p>
+<h4 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h4><ul>
+<li>hexo-deployer-git<br>用于向GitHub、GitCafe部署静态页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在<code>blog</code>目录下的<code>_config.yml</code>配置文件末尾设置，配置格式如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">    github: &lt;repository url&gt;,[branch]</span><br><span class="line">    gitcafe: &lt;repository url&gt;,[branch]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>hexo-generator-feed 用于生成RSS订阅</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hexo-generator-sitemap 用于生成搜索引擎网站地图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="其他插件"><a href="#其他插件" class="headerlink" title="其他插件"></a>其他插件</h4><p>更多插件请移步<a href="http://hexo.io/plugins/" target="_blank" rel="noopener">Hexo官方插件页</a>了解。</p>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>Hexo文章目录为<code>blog/source/_posts</code>，以 .md为后缀的文件，使用Markdown语法书写。<strong>个人建议可以使用webstorm中的Markdown笔记插件</strong>，Hexo默认使用<code>hexo new [layout] &lt;title&gt;</code>命令新建文章，但是我建议新手用以下方法来进行写作。</p>
+<h4 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h4><p>写作完成后，在<code>blog/source/_posts</code>目录下新建一个以<code>.md</code>为后缀的文件，如<code>test.md</code>，然后用<code>Notepad++</code>打开该文件，并把之前写好的内容复制进去保存。</p>
+<p>文章的永久链接格式<code>title</code>属性取自该文件名。如使用默认的永久链接格式<code>:year/:month/:day/:title/</code>，则生成的链接为<code>http://yoursite.com/2015/03/21/test/</code>。</p>
+<h4 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h4><p>在<code>blog</code>目录下右键点击<code>Git Bash Here</code>，执行<code>hexo s</code>启动服务器。</p>
+<p>在浏览器中打开<code>http://localhost:4000</code>，即可看到刚才写的文章。</p>
+<p>启动服务器后，会实时监控文件，再次修改<code>.md</code>文件只需刷新浏览器即可看到新的效果。</p>
+<h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><p>预览满意后，即可执行<code>hexo g</code>命令生成静态文件。生成的静态文件位于<code>blog/publi</code>c目录下。</p>
+<p>为了避免遇到莫名其妙的问题，建议使用<code>hexo clean &amp;&amp; hexo g</code>命令，先清除缓存文件 (db.json) 和已生成的静态文件 (public)，再生成静态文件。</p>
+<h4 id="添加Meta信息"><a href="#添加Meta信息" class="headerlink" title="添加Meta信息"></a>添加Meta信息</h4><p>Hexo默认的文件头只有<code>title</code>、<code>date</code>、<code>tag</code>s属性，生成的<code>html</code>会缺少<code>Meta</code>信息，不利于搜索引擎收录。建议自行在文件头中添加<code>keywords</code>和<code>description</code>属性。<code>categories</code>属性可自行选择是否添加。</p>
+<p>文件头格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: ##文章标题</span><br><span class="line">date: ##时间，格式为 YYYY-MM-DD HH:mm:ss</span><br><span class="line">categories: ##分类</span><br><span class="line">tags: ##标签，多标签格式为 [tag1,tag2,...]</span><br><span class="line">keywords: ##文章关键词，多关键词格式为 keyword1,keywords2,...</span><br><span class="line">description: ##文章描述</span><br><span class="line">---</span><br><span class="line">正文</span><br></pre></td></tr></table></figure>
+<p>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: 这是一篇测试文章</span><br><span class="line">date: 2015-03-21 15:13:48</span><br><span class="line">categories: Hexo</span><br><span class="line">tags: [Hexo,测试]</span><br><span class="line">keywords: Hexo,文章,测试</span><br><span class="line">description: 这是一篇测试文章，用于测试Hexo文章文件头。</span><br><span class="line">---</span><br><span class="line">正文</span><br></pre></td></tr></table></figure></p>
+<h4 id="图床方式"><a href="#图床方式" class="headerlink" title="图床方式"></a>图床方式</h4><p>建议把图片上传到有道云笔记以后复制图片链接地址用Markdown语法插入文章即可。</p>
+<h4 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h4><p>以<code>test.jpg</code>为例，在<code>blog/source</code>目录下新建一个文件夹，如<code>images</code>，将该图片放入此文件夹中。写作的时候使用的图片链接地址为<code>/images/test.jpg</code>。</p>
+<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h3><h4 id="设置Git"><a href="#设置Git" class="headerlink" title="设置Git"></a>设置Git</h4><p>启动<code>Git</code>，执行以下命令，把<a href="mailto:`your_email@example.com" target="_blank" rel="noopener">`your_email@example.com</a><code>改成你的注册邮箱，</code>username`改成你的注册用户名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;your_email@example.com&quot;</span><br><span class="line">git config --global user.name &quot;username&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH Key"></a>生成SSH Key</h4><p>执行以下命令，把<a href="mailto:`your_email@example.com" target="_blank" rel="noopener">`your_email@example.com</a>`改成你的注册邮箱<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>执行过程中会显示以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa): ##密钥保存路径，直接回车</span><br><span class="line">Created directory &apos;/c/Users/Administrator/.ssh&apos;.</span><br><span class="line">Enter passphrase (empty for no passphrase): ##密钥密码，直接回车</span><br><span class="line">Enter same passphrase again: #重复密钥密码，直接回车</span><br><span class="line">Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa. #私钥保存路径</span><br><span class="line">Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub. #公钥保存路径</span><br><span class="line">The key fingerprint is:</span><br><span class="line">07:dd:88:e9:2f:66:dd:d9:5b:3b:e0:1c:3f:49:f4:0c your_email@example.com</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|                 |</span><br><span class="line">|         + o     |</span><br><span class="line">|        + o .    |</span><br><span class="line">|       . .    E. |</span><br><span class="line">|        S .   .o.|</span><br><span class="line">|         + . = .o|</span><br><span class="line">|        + o = * o|</span><br><span class="line">|       o .   o B.|</span><br><span class="line">|              ..o|</span><br><span class="line">+-----------------+</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：务必保存好id_rsa私钥文件。</strong></p>
+<h4 id="添加SSH公钥"><a href="#添加SSH公钥" class="headerlink" title="添加SSH公钥"></a>添加SSH公钥</h4><p>用文本编辑器打开公钥文件<code>id_rsa.pub</code>，复制里面的所有内容到剪贴板。</p>
+<ul>
+<li>GitHub<br>Settings—&gt;SSH keys—&gt;Add SSH key，在Title文本框中输入任意字符，在Key文本框粘贴刚才复制的公钥字符串，按保存按钮完成操作。</li>
+</ul>
+<h4 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>首次连接会出现密钥指纹警告，输入yes回车即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line"># RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line"># Are you sure you want to continue connecting (yes/no)? yes</span><br></pre></td></tr></table></figure></p>
+<p>如果连接成功的话，会出现以下信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
+<h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><ul>
+<li>GitHub Github Pages有两种类型，User Pages和Project Pages，两种类型都可以。区别在于<pre><code>- **User Pages** 访问地址是二级域名`http://username.github.io`，部署的时候需要部署到`master`分支。创建项目名称为`username.github.io`，将username改为你的用户名。
+- **Project Pages** 访问地址是`http://username.github.io/projectname`，需要部署到`gh-pages`分支。创建项目名称可以随意。
+</code></pre><h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4>Hexo 3.0.0默认未安装<code>hexo-deployer-git</code>插件，如果你之前未安装，<code>blo</code>g目录下执行以下命令安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>修改<code>blog/_config.yml</code>文件的deploy项，格式如下，将<code>username</code>改为你的用户名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:username/username.github.io.git,master</span><br><span class="line">    gitcafe: git@gitcafe.com:username/username.git,gitcafe-pages</span><br></pre></td></tr></table></figure></p>
+<p>如果GitHub创建的是Project Pages，则格式如下，将<code>username</code>改为你的用户名，<code>projectname</code>改为项目名称。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:username/projectname.git,gh-pages</span><br><span class="line">    gitcafe: git@gitcafe.com:username/username.git,gitcafe-pages</span><br></pre></td></tr></table></figure></p>
+<p>设置完成后，在<code>blog</code>目录下执行<code>hexo d</code>即可同时部署。</p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>部署完成后，浏览器打开以下地址</p>
+<ul>
+<li>GitHub<ul>
+<li>User Pages <a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a></li>
+<li>Project Pages <a href="http://username.github.io/projectname" target="_blank" rel="noopener">http://username.github.io/projectname</a><h4 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h4></li>
+</ul>
+</li>
+<li>如果遇到莫名其妙的问题，先删除<code>blog</code>下的<code>.deploy_git</code>文件夹，再执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>命令清除缓存文件重新生成静态文静并部署。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">SY</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo安装和配置"><span class="nav-number">2.</span> <span class="nav-text">Hexo安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">2.3.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">2.4.</span> <span class="nav-text">配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题和插件"><span class="nav-number">3.</span> <span class="nav-text">主题和插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用"><span class="nav-number">3.2.</span> <span class="nav-text">启用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新"><span class="nav-number">3.3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">3.4.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件"><span class="nav-number">3.5.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分页插件"><span class="nav-number">3.6.</span> <span class="nav-text">分页插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐插件"><span class="nav-number">3.7.</span> <span class="nav-text">推荐插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他插件"><span class="nav-number">3.8.</span> <span class="nav-text">其他插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写作"><span class="nav-number">4.</span> <span class="nav-text">写作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建文章"><span class="nav-number">4.1.</span> <span class="nav-text">新建文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预览"><span class="nav-number">4.2.</span> <span class="nav-text">预览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成静态文件"><span class="nav-number">4.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Meta信息"><span class="nav-number">4.4.</span> <span class="nav-text">添加Meta信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图床方式"><span class="nav-number">4.5.</span> <span class="nav-text">图床方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署方式"><span class="nav-number">4.6.</span> <span class="nav-text">部署方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到github"><span class="nav-number">5.</span> <span class="nav-text">部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置Git"><span class="nav-number">5.1.</span> <span class="nav-text">设置Git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成SSH-Key"><span class="nav-number">5.2.</span> <span class="nav-text">生成SSH Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加SSH公钥"><span class="nav-number">5.3.</span> <span class="nav-text">添加SSH公钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试连接"><span class="nav-number">5.4.</span> <span class="nav-text">测试连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目"><span class="nav-number">5.5.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">5.6.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试"><span class="nav-number">5.7.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他-1"><span class="nav-number">5.8.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SY</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
